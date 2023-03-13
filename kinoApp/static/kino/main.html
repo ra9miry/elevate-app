@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Elevate</title>
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'homePage'%}">Elevate</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </header>
+
+    <div id = "banner" >
+        <div class="container">
+            <h1> Free Movies in this platform </h1>
+            <p> Добрый день,тут должен быть текст </p>
+            <a href="{%url 'allMovies'%}" class="btn btn btn-outline-light">All Movies</a>
+            <a href="{% url 'signup' %}" class="btn btn btn-outline-light">Sign Up</a>
+        </div>
+    </div>
+
+    <script src="bootstrap.js"></script>
+</body>
+</html>

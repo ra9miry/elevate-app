@@ -1,0 +1,32 @@
+{%extends '../base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<style>
+    #id_username, #id_first_name, #id_last_name, #id_email, #id_password1, #id_password2 {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #000;
+        display block;
+        width: 100%;
+        margin-bottom: 15px;
+}
+</style>
+<div style = "padding: 120px; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://kartinkin.net/pics/uploads/posts/2022-08/1659564341_28-kartinkin-net-p-pattern-kinoteatr-krasivo-36.jpg); background-size: cover; background-attachment: fixed; background-position: center;" >
+<div class="container mt-5 mb-5">
+    <div class="card">
+        <div class="card-body" style = "color:black">
+            <h1>Регистрация</h1>
+            <form method="post">
+                {% csrf_token%}
+                {{form}}
+                <div style="display = block;">
+                    <button class="btn btn-dark">Зарегестрироваться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

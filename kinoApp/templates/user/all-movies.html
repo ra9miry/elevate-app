@@ -1,0 +1,53 @@
+{%extends '../base.html' %}
+
+{% block title %}All-movies{% endblock %}
+
+{% block content %}
+<div style = "padding: 100px; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://7kun.kz/wp-content/uploads/2019/09/cd6760f123b8a36d1f4196d667e6a5f8.jpg); background-size: cover; background-attachment: fixed; background-position: center;">
+<div class="top-ten">
+    <div class="container mb-4 mt-4">
+        <h2 style="color:white" class="mt-5 mb-3">Все фильмы</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card " style = "">
+                    <div class="card-body" style = "background-color:#FFFFFF">
+                        <h3 style="color:black">Поиск</h3>
+                        <form class="mb-4 mt-4" action="{% url 'allMovies' %}">
+                            <div class="row">
+                                <div class="col-9">
+                                    <input type="search" name = "search" class="form-control" placeholder="Название фильма,описание">
+                                </div>
+                                <div class="col-3">
+                                    <button type = "submit" class="btn btn-dark"> <i class="fa-solid fa-magnifying-glass">Поиск</i></button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <h3 style="color:black"> Жанры : </h3>
+                        <ul>
+                            <li><a href="{% url 'allMovies' %}" class="text-dark">Все фильмы</a></li>
+                            {% for genre in genres %}
+                            <li><a href="{% url 'filterMovies' slug=genre.slug %}" class="text-dark">{{ genre.genreName }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-8">
+                {% for movie in movies %}
+                <div class="card mb-4">
+                <div class="card-body" style = "background-color:#EEE8AA">
+                    <h2 style="color: black;">{{movie.movieName}}</h2>
+                    <a href="{% url 'movieDetail' pk=movie.pk %}" class="btn btn-dark">Смотреть</a>
+                </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
